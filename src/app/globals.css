@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0B0D0F;
+  --color-surface: #14171A;
+  --color-surface-elevated: #1C2024;
+  --color-foreground: #F5F3EF;
+  --color-muted: #A8ADB3;
+  --color-border: #2A2F34;
+  --color-accent: #C8A45D;
+  --color-accent-hover: #D4B46E;
+  --color-accent-foreground: #111111;
+
+  --font-display: var(--font-display), system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-sans), system-ui, -apple-system, sans-serif;
+
+  --radius-lg: 1rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #0B0D0F;
+    color: #F5F3EF;
+  }
+
+  body {
+    background-color: #0B0D0F;
+    color: #F5F3EF;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  /* Focus visible accessibility state */
+  :focus-visible {
+    outline: 2px solid #C8A45D;
+    outline-offset: 2px;
+  }
+
+  /* Selection highlight */
+  ::selection {
+    background-color: #C8A45D;
+    color: #111111;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0D0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A2F34;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C8A45D;
+}
