@@ -28,12 +28,25 @@ export const metadata: Metadata = {
     'KAYN car rental',
   ],
   authors: [{ name: 'KAYN' }],
+  icons: {
+    icon: '/logo.svg',
+    shortcut: '/logo.svg',
+    apple: '/logo.svg',
+  },
   openGraph: {
     title: 'KAYN — Location de Voitures en Algérie',
     description:
       'Service de location de voitures récentes et fiables en Algérie. Prise en charge rapide à Alger, Oran, Constantine et Blida.',
     type: 'website',
     locale: 'fr_DZ',
+    images: [
+      {
+        url: '/logo.svg',
+        width: 512,
+        height: 512,
+        alt: 'KAYN Algeria Luxury Car Rental Logo',
+      },
+    ],
   },
 };
 
