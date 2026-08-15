@@ -18,7 +18,7 @@ export function MarqueeTicker() {
   return (
     <div className="w-full bg-gradient-to-r from-[#14171A] via-[#1C2024] to-[#14171A] border-y border-[#C8A45D]/30 py-3.5 overflow-hidden relative shadow-inner">
       <div className="flex w-max animate-marquee space-x-8 items-center">
-        {/* Render twice for seamless loop */}
+        {/* Render 3x for seamless loop */}
         {[...items, ...items, ...items].map((item, idx) => (
           <div key={idx} className="flex items-center gap-3 shrink-0">
             {item.icon}
@@ -30,22 +30,26 @@ export function MarqueeTicker() {
         ))}
       </div>
 
-      <style jsx>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-33.333%);
-          }
-        }
-        .animate-marquee {
-          animation: marquee 25s linear infinite;
-        }
-        .animate-marquee:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            @keyframes marquee {
+              0% {
+                transform: translateX(0%);
+              }
+              100% {
+                transform: translateX(-33.333%);
+              }
+            }
+            .animate-marquee {
+              animation: marquee 25s linear infinite;
+            }
+            .animate-marquee:hover {
+              animation-play-state: paused;
+            }
+          `,
+        }}
+      />
     </div>
   );
 }
